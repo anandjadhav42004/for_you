@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sakshi 💖</title>
+    <!-- Premium Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-pink: #fff5f8;
+            --soft-pink: #ffb7c5;
+            --deep-pink: #ff8da1;
+            --white-glass: rgba(255, 255, 255, 0.65);
+            --border: rgba(255, 183, 197, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            /* Premium Heart Cursor */
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ffb7c5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
+        }
+
+        body {
+            background-color: var(--bg-pink);
+            color: #444;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            /* Dreamy Background Animation */
+            background: linear-gradient(-45deg, #fff5f8, #f3e5f5, #ffe4e8, #fff5f8);
+            background-size: 400% 400%;
+            animation: grad 12s ease infinite;
+        }
+
+        @keyframes grad {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        /* Sparkle Cursor Effect */
+        .sparkle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 0 10px white, 0 0 20px var(--soft-pink);
+            animation: sparkle-fade 0.8s forwards;
+        }
+
+        @keyframes sparkle-fade {
+            to {
+                transform: scale(3) translateY(-30px);
+                opacity: 0;
+            }
+        }
+
+        /* --- BACKGROUND DECOR --- */
+        .heart-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            pointer-events: none;
+            color: var(--soft-pink);
+            opacity: 0.4;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Tap/Click Heart Explosion */
+        .tap-heart {
+            position: fixed;
+            font-size: 24px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: heart-pop 0.8s ease-out forwards;
+            color: var(--soft-pink);
+            filter: drop-shadow(0 0 10px rgba(255, 183, 197, 0.4));
+        }
+
+        @keyframes heart-pop {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(3.5) translateY(-100px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        /* --- INTRO SECTION --- */
+        #intro-scene {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: all 1s ease;
+            position: relative;
+            z-index: 100;
+        }
+
+        .panda-box {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin-bottom: 2.5rem;
+            cursor: pointer;
+        }
+
+        .panda-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(255, 141, 161, 0.3));
+            animation: breathe 5s infinite ease-in-out;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .panda-box:hover .panda-img {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-12px) scale(1.05) rotate(3deg);
+            }
+        }
+
+        /* Cute Premium Dialog Box */
+        .panda-bubble {
+            position: absolute;
+            top: -30px;
+            right: -60px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border-bottom-left-radius: 5px;
+            font-size: 1.1rem;
+            color: var(--deep-pink);
+            font-weight: 500;
+            box-shadow: 0 15px 35px rgba(255, 141, 161, 0.15);
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            z-index: 10;
+            width: max-content;
+            max-width: 220px;
+            border: 1px solid rgba(255, 183, 197, 0.2);
+        }
+
+        .panda-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            border-width: 10px 10px 0 0;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .show-bubble {
+            opacity: 1;
+            transform: translateY(0) scale(1.1);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 10vw, 4.5rem);
+            color: var(--deep-pink);
+            text-shadow: 2px 2px 10px rgba(255, 141, 161, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-cinematic {
+            margin-top: 2rem;
+            padding: 16px 45px;
+            background: white;
+            border: 2px solid var(--soft-pink);
+            color: var(--deep-pink);
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 5px 15px rgba(255, 183, 197, 0.4);
+        }
+
+        .btn-cinematic:hover {
+            background: var(--deep-pink);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 141, 161, 0.5);
+        }
+
+        #noBtn {
+            border-color: #ddd;
+            color: #aaa;
+            margin-left: 15px;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* --- SCROLLING FOCUS LETTER SECTION --- */
+        #letter-scene {
+            display: none;
+            padding: 15vh 6vw 25vh;
+            z-index: 100;
+            position: relative;
+        }
+
+        .message-bubble {
+            max-width: 700px;
+            margin: 0 auto 40vh;
+            /* Deep spacing for spotlight effect */
+            background: var(--white-glass);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 45px;
+            border-radius: 55px;
+            border-bottom-left-radius: 8px;
+            /* Classic speech bubble look */
+            border: 2px solid white;
+            box-shadow: 0 25px 60px rgba(255, 183, 197, 0.2);
+            opacity: 0.05;
+            filter: blur(15px);
+            transform: translateY(40px) scale(0.95);
+            transition: 1.8s all cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+        }
+
+        .message-bubble.in-focus {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0) scale(1);
+        }
+
+        .message-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 5vw, 1.45rem);
+            line-height: 1.9;
+            color: #444;
+            font-style: italic;
+        }
+
+        .bubble-emoji {
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            font-size: 2.4rem;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Pillu's Special Section Box */
+        .miss-you-box {
+            text-align: center;
+        }
+
+        .miss-you-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: var(--deep-pink);
+            margin-bottom: 1.5rem;
+        }
+
+        .miss-you-para {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .questions-box {
+            background: rgba(255, 183, 197, 0.15);
+            padding: 40px 30px;
+            border-radius: 45px;
+            margin-top: 50px;
+            border: 1.5px dashed var(--deep-pink);
+        }
+
+        .q-item {
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+            color: var(--deep-pink);
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        /* Love Meter */
+        .meter-box {
+            margin: 10vh auto;
+            text-align: center;
+        }
+
+        .meter-track {
+            width: 100%;
+            max-width: 420px;
+            height: 12px;
+            background: white;
+            border-radius: 15px;
+            margin: 25px auto;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1.5px solid #efefef;
+        }
+
+        .meter-fill {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--soft-pink), var(--deep-pink));
+            transition: width 0.4s;
+        }
+
+        .final-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3.5rem, 12vw, 5rem);
+            color: var(--deep-pink);
+            text-align: center;
+            margin-top: 15vh;
+            padding-bottom: 20vh;
+            text-shadow: 0 10px 35px rgba(255, 141, 161, 0.25);
+        }
+
+        /* Memory Bubbles */
+        .bubble {
+            position: fixed;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: var(--deep-pink);
+            cursor: pointer;
+            z-index: 200;
+            animation: bubbleFloat 6s infinite alternate ease-in-out;
+            border: 1px solid white;
+            box-shadow: 0 10px 30px rgba(255, 141, 161, 0.1);
+        }
+
+        @keyframes bubbleFloat {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-30px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .btn-cinematic {
+                padding: 15px 35px;
+                width: 100%;
+            }
+
+            #intro-scene {
+                padding: 40px 20px;
+            }
+
+            .message-bubble {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heart-bg" id="heart-container"></div>
+
+    <!-- Memory Bubbles -->
+    <div class="bubble" style="top: 15%; left: 8%; animation-delay: 0s;" onclick="alert('You are my world! 🌎❤️')">Our
+        story? ✨</div>
+    <div class="bubble" style="bottom: 25%; right: 8%; animation-delay: 1.5s;"
+        onclick="alert('I love you, pillu... 🤍')">A secret? 🎁</div>
+
+    <!-- Intro Scene -->
+    <section id="intro-scene">
+        <div class="panda-box" onclick="pandaPop()">
+            <div class="panda-bubble" id="pBubble">Meow! Love you! ❤️✨</div>
+            <img src="panda_sakshi.png" alt="Cute Panda" class="panda-img" id="heroImage"
+                onerror="this.src='https://cdn-icons-png.flaticon.com/512/2311/2311350.png'">
+        </div>
+        <h1>Hi Sakshi... 🥺</h1>
+        <p style="color: #888; letter-spacing: 2px;">I miss you so much, Pillu.</p>
+        <div style="display: flex; justify-content: center; width: 100%; max-width: 400px; gap: 15px;">
+            <button class="btn-cinematic" id="yesBtn">Open my heart</button>
+            <button class="btn-cinematic" id="noBtn">Don't</button>
+        </div>
+    </section>
+
+    <!-- Scrolling Focusing Letter Scene -->
+    <section id="letter-scene">
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">❤️</span>
+            <div class="message-text">
+                "You want to know the truth? The real truth is that I like you — more than I’ve ever liked anyone in my
+                entire life. What I feel for you isn’t something small or temporary. It’s rare. It’s deep. And honestly,
+                it scares me sometimes because I don’t want to lose you."
+            </div>
+        </div>
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">💭</span>
+            <div class="message-text">
+                "I’ve tried to act normal. I’ve told myself over and over that I should calm down, that I should protect
+                my heart. But no matter how many times I say that, it doesn’t change the fact that my heart skips a beat
+                when you text me. I smile at my phone like an idiot when I see your name pop up."
+            </div>
+        </div>
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">✨</span>
+            <div class="message-text">
+                "You make me feel something I’ve never felt before. With you, I feel seen. I feel chosen. I feel like I
+                matter. I want you in my life because you’re kind. You’re caring. You have this softness in you that
+                makes people feel safe."
+            </div>
+        </div>
+
+        <!-- Pillu's "Miss You" Special Box In Bubble -->
+        <div class="message-bubble">
+            <span class="bubble-emoji">🤍</span>
+            <div class="miss-you-box">
+                <h2 class="miss-you-title">I miss you, pillu... 🤍</h2>
+                <div class="message-text">
+                    "It’s strange how someone can become such an important part of your day that even a little distance
+                    feels heavy. I miss your voice, your laugh, the way you talk to me like I’m your favorite person.
+                    Come back soon — my heart feels quieter without you."
+                </div>
+            </div>
+        </div>
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">🎞️</span>
+            <div class="message-text">
+                "Sometimes I pretend I’m stronger than I am. But the truth is… I don’t want to walk away. You were my
+                first in so many ways — my first real feelings, my first real connection, my first person I imagined a
+                future with. What I felt was real."
+            </div>
+        </div>
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">🌙</span>
+            <div class="message-text">
+                "I dream about the day I can look into your eyes and tell you all of this face to face. I can’t wait for
+                the day I can fall asleep in your arms, cuddling under blankets, watching movies, or looking at the
+                stars together."
+            </div>
+        </div>
+
+        <div class="message-bubble">
+            <span class="bubble-emoji">🪄</span>
+            <div class="message-text">
+                "So here it is — no hiding, no pretending. <br><br> <strong>I love you. I truly, deeply love
+                    you.</strong>"
+            </div>
+        </div>
+
+        <!-- Love Meter -->
+        <div class="message-bubble">
+            <div class="meter-box">
+                <p style="color:#777; margin-bottom: 1rem;">How much do you love me? ❤️</p>
+                <div class="meter-track" id="loveMeter">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Questions -->
+        <div class="message-bubble" style="margin-bottom: 10vh;">
+            <div class="message-text" style="text-align: center;">
+                <p style="margin-bottom: 25px; font-weight: bold; color: var(--deep-pink); font-size: 1.5rem;">A few
+                    questions for you... 🤍</p>
+                <div class="questions-box">
+                    <div class="q-item">✨ What made your heart choose me?</div>
+                    <div class="q-item">✨ When you imagine your future... can you see me in it?</div>
+                    <div class="q-item">✨ If I promise to choose you every day... will you choose me too?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-signature">✨ I’m in love with you. ✨</div>
+        <button onclick="location.reload()"
+            style="display:block; margin: 0 auto; background:none; border:none; color:#aaa; cursor:pointer; font-size: 0.9rem;">↺
+            Restart the Journey</button>
+    </section>
+
+    <script>
+        // --- 1. Sparkle Cursor Trail ---
+        window.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.8) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 800);
+            }
+        });
+
+        // --- 2. Floating Hearts ---
+        function createHeart() {
+            const h = document.createElement('div');
+            h.innerHTML = ['❤️', '💕', '🌸', '✨', '💕'][Math.floor(Math.random() * 5)];
+            h.classList.add('floating-heart');
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.fontSize = Math.random() * 20 + 15 + 'px';
+            h.style.animationDuration = Math.random() * 4 + 6 + 's';
+            document.getElementById('heart-container').appendChild(h);
+            setTimeout(() => h.remove(), 10000);
+        }
+        setInterval(createHeart, 500);
+
+        // --- 3. Tap/Click Heart Explosion ---
+        function touchRipple(x, y) {
+            const t = document.createElement('div');
+            t.innerHTML = '❤️';
+            t.className = 'tap-heart';
+            t.style.left = x + 'px';
+            t.style.top = y + 'px';
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 900);
+        }
+        window.addEventListener('mousedown', (e) => touchRipple(e.clientX, e.clientY));
+        window.addEventListener('touchstart', (e) => touchRipple(e.touches[0].clientX, e.touches[0].clientY));
+
+        // --- 4. Interactive Panda ---
+        function pandaPop() {
+            const b = document.getElementById('pBubble');
+            b.classList.add('show-bubble');
+            const phrases = ["Pillu, I love you! ❤️✨", "You're my favorite! 🌸", "Stay with me? 🥺", "Meow! Kiss? 💋"];
+            b.innerText = phrases[Math.floor(Math.random() * phrases.length)];
+            setTimeout(() => b.classList.remove('show-bubble'), 3000);
+            for (let i = 0; i < 12; i++) setTimeout(() => {
+                const rect = document.getElementById('heroImage').getBoundingClientRect();
+                touchRipple(rect.left + rect.width / 2 + (Math.random() - 0.5) * 150, rect.top + rect.height / 2 + (Math.random() - 0.5) * 150);
+            }, i * 60);
+        }
+
+        // --- 5. Runaway No Button ---
+        const noBtn = document.getElementById('noBtn');
+        const moveNo = () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        };
+        noBtn.addEventListener('mouseover', moveNo);
+        noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); moveNo(); });
+
+        // --- 6. Transition & Observer ---
+        const yesBtn = document.getElementById('yesBtn');
+        yesBtn.addEventListener('click', () => {
+            document.getElementById('intro-scene').style.transform = 'translateY(-100vh) scale(0.9)';
+            document.getElementById('intro-scene').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('intro-scene').style.display = 'none';
+                const letter = document.getElementById('letter-scene');
+                letter.style.display = 'block';
+                document.body.style.overflowY = 'auto';
+                initObserver();
+            }, 800);
+        });
+
+        function initObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-focus');
+                    } else {
+                        entry.target.classList.remove('in-focus');
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.message-bubble').forEach(b => observer.observe(b));
+        }
+
+        // --- 7. Love Meter ---
+        const loveMeter = document.getElementById('loveMeter');
+        const meterFill = document.getElementById('meterFill');
+        loveMeter.addEventListener('click', (e) => {
+            const rect = loveMeter.getBoundingClientRect();
+            const percent = ((e.clientX - rect.left) / rect.width) * 100;
+            meterFill.style.width = percent + "%";
+            for (let i = 0; i < 15; i++) setTimeout(() => touchRipple(rect.left + (rect.width * percent / 100), rect.top), i * 50);
+        });
+    </script>
+</body>
+
+</html>
